@@ -10,6 +10,7 @@ build:
 	docker build -t bde2020/hadoop-historyserver:$(current_branch) ./historyserver
 	docker build -t bde2020/hadoop-submit:$(current_branch) ./submit
 
+# Doesn't work!
 app:
 	docker build -t hadoop-app ./submit
 	docker run --network ${DOCKER_NETWORK} --env-file ${ENV_FILE} bde2020/hadoop-base:$(current_branch) hdfs dfs -mkdir -p /input/
@@ -18,3 +19,17 @@ app:
 	docker run --network ${DOCKER_NETWORK} --env-file ${ENV_FILE} bde2020/hadoop-base:$(current_branch) hdfs dfs -cat /output/*
 	docker run --network ${DOCKER_NETWORK} --env-file ${ENV_FILE} bde2020/hadoop-base:$(current_branch) hdfs dfs -rm -r /output
 	docker run --network ${DOCKER_NETWORK} --env-file ${ENV_FILE} bde2020/hadoop-base:$(current_branch) hdfs dfs -rm -r /input
+
+run:
+	docker-compose up -d
+	docker exec -it namenode mkdir -p input
+	docker exec -it namenode mkdir -p jars
+	docker cp input.sample.txt namenode:input/
+	docker cp submit/App.jar namenode:jars/
+	docker exec -it namenode hadoop dfsadmin -safemode leave
+	docker exec -it namenode hadoop fs -mkdir -p input
+	docker exec -it namenode hdfs dfs -rmr input
+	docker exec -it namenode hdfs dfs -put input .
+	docker exec -it namenode hadoop jar jars/App.jar input output
+	docker exec -it namenode hdfs dfs -ls output/
+	docker exec -it namenode hdfs dfs -cat output/part-r-00000
