@@ -1,13 +1,21 @@
-[![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/big-data-europe/Lobby)
+# Hadoop Temperatures
 
-# Changes
+This is a sample project, part of my learning how to set up a Hadoop environment and Hadoop (Java/Maven) project from scratch.
 
-Version 2.0.0 introduces uses wait_for_it script for the cluster startup
+[**Andreja Nesic**](https://www.linkedin.com/in/andreja-nesic/) | _Comp Sci Undergrad_ <br>
+[School of Computing, Belgrade](https://www.linkedin.com/school/racunarski-fakultet/) <br>
+office@andrejanesic.com <br>
+anesic3119rn@raf.rs
 
-# Hadoop Docker
+---
 
-## Supported Hadoop Versions
-See repository branches for supported hadoop versions
+Some of the code used in this repo is copyright of Copyright © 2015 Tom White, from the book "Hadoop: The Definitive Guide" (4th edition.) This code is only used for educational/learning purposes. Original code can be found here: <br>
+https://github.com/tomwhite/hadoop-book
+
+The code is also based on a fork of the [big-data-europe/docker-hadoop](https://github.com/big-data-europe/docker-hadoop) repository, which can be found here: <br>
+https://github.com/big-data-europe/docker-hadoop
+
+---
 
 ## Quick Start
 
