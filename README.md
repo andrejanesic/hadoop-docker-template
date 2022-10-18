@@ -1,4 +1,4 @@
-# Hadoop App
+# Hadoop App Template
 
 Simple, working Docker setup for Hadoop. Get your Hadoop apps up and running in minutes.
 
