@@ -1,11 +1,13 @@
-# Hadoop Temperatures
+# Hadoop App
 
-This is a sample project, part of my learning how to set up a Hadoop environment and Hadoop (Java/Maven) project from scratch.
+Simple, working Docker setup for Hadoop. Get your Hadoop apps up and running in minutes.
 
-[**Andreja Nesic**](https://www.linkedin.com/in/andreja-nesic/) | _Comp Sci Undergrad_ <br>
-[School of Computing, Belgrade](https://www.linkedin.com/school/racunarski-fakultet/) <br>
-office@andrejanesic.com <br>
-anesic3119rn@raf.rs
+## How To Use
+
+1. Put your code into `src/main/java/<package>`.
+2. Configure the Maven setup to point to your main class.
+3. Put your input files into the `input` directory.
+4. Follow **Setup & Running** below to build your project.
 
 ## Setup & Running
 
@@ -29,7 +31,14 @@ mvn package
 make run
 ```
 
-## Credits
+## Author
+
+[**Andreja Nesic**](https://www.linkedin.com/in/andreja-nesic/) | _Comp Sci Undergrad_ <br>
+[School of Computing, Belgrade](https://www.linkedin.com/school/racunarski-fakultet/) <br>
+office@andrejanesic.com <br>
+anesic3119rn@raf.rs
+
+### Credits
 
 * Some of the code used in this repo is copyright of Copyright © 2015 Tom White, from the book "Hadoop: The Definitive Guide" (4th edition.) This code is only used for educational/learning purposes. Original code can be found here: <br>
 https://github.com/tomwhite/hadoop-book

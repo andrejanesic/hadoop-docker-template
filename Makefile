@@ -1,4 +1,4 @@
-DOCKER_NETWORK = hadoop-temperatures_default
+DOCKER_NETWORK = hadoop-app_default
 ENV_FILE = hadoop.env
 current_branch := $(shell git rev-parse --abbrev-ref HEAD)
 build:
@@ -22,13 +22,15 @@ app:
 
 run:
 	docker-compose up -d
+	docker exec -it namenode rm -rf input
 	docker exec -it namenode mkdir -p input
 	docker exec -it namenode mkdir -p jars
-	docker cp input.sample.txt namenode:input/
+	docker cp input/* namenode:input/
 	docker cp submit/App.jar namenode:jars/
 	docker exec -it namenode hadoop dfsadmin -safemode leave
 	docker exec -it namenode hadoop fs -mkdir -p input
 	docker exec -it namenode hdfs dfs -rmr input
+	docker exec -it namenode hdfs dfs -rmr output
 	docker exec -it namenode hdfs dfs -put input .
 	docker exec -it namenode hadoop jar jars/App.jar input output
 	docker exec -it namenode hdfs dfs -ls output/

@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.andrejanesic</groupId>
-    <artifactId>hadoop-temperatures</artifactId>
+    <artifactId>hadoop-app</artifactId>
     <version>1.0</version>
 
     <properties>
@@ -35,7 +35,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>com.andrejanesic.hadoop_temperatures.MaxTemperature</mainClass>
+                            <mainClass>com.andrejanesic.hadoop_app.Main</mainClass>
                         </manifest>
                     </archive>
                     <outputDirectory>submit</outputDirectory>
